@@ -5,12 +5,13 @@ import pynmea2
 from pubnub.pnconfiguration import PNConfiguration
 from pubnub.pubnub import PubNub
 from pubnub.exceptions import PubNubException
+from decouple import config
 
 pnChannel = "raspi-tracker";
 
 pnconfig = PNConfiguration()
-pnconfig.subscribe_key = "sub-c-b1ea6414-c791-11ea-b3f2-c27cb65b13f4"
-pnconfig.publish_key = "pub-c-6e70a79c-7af6-4177-bfb5-b7eaf484a510"
+pnconfig.subscribe_key = config('subscribe_key')
+pnconfig.publish_key = config('publish_key')
 pnconfig.ssl = False
  
 pubnub = PubNub(pnconfig)
