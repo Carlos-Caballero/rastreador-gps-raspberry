@@ -16,6 +16,7 @@ pnconfig.ssl = False
 
 pubnub = PubNub(pnconfig)
 pubnub.subscribe().channels(pnChannel).execute()
+time.sleep(20)
 
 while True:
     port = "/dev/ttyAMA0"
