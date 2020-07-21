@@ -39,7 +39,6 @@ while True:
                 'lat': lat,
                 'lng': lng
             }).sync()
-            print("publish timetoken: %d" % envelope.result.timetoken)
             time.sleep(10)
         except PubNubException as e:
             handle_exception(e)
